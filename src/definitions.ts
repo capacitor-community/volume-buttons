@@ -27,7 +27,23 @@ export interface VolumeButtonsResult {
   direction: 'up' | 'down';
 }
 
+export interface GetIsWatchingResult {
+  /**
+   * If the volume buttons are being watched.
+   *
+   * @since 1.0.1
+   */
+  value: boolean;
+}
+
 export interface VolumeButtonsPlugin {
+
+  /**
+   * Get the watch status of the volume buttons.
+   *
+   * @since 1.0.1
+   */
+  isWatching(): Promise<GetIsWatchingResult>;
 
   /**
    * Set up a watch for he hardware volume buttons changes

@@ -27,9 +27,23 @@ import com.getcapacitor.annotation.CapacitorPlugin;
 public class VolumeButtonsPlugin extends Plugin {
 
     private PluginCall savedCall;
+    private boolean isStarted = false;
+
+    @PluginMethod(returnType = PluginMethod.RETURN_PROMISE)
+    public void isWatching(final PluginCall call) {
+
+        JSObject ret = new JSObject();
+        ret.put("value", isStarted);
+        call.resolve(ret);
+    }
 
     @PluginMethod(returnType = PluginMethod.RETURN_CALLBACK)
     public void watchVolume(final PluginCall call) {
+
+        if (isStarted) {
+            call.reject("Volume buttons has already been watched");
+            return;
+        }
 
         call.setKeepAlive(true);
         savedCall = call;
@@ -59,10 +73,17 @@ public class VolumeButtonsPlugin extends Plugin {
                             }
                         }
                 );
+
+        isStarted = true;
     }
 
-    @PluginMethod(returnType = PluginMethod.RETURN_NONE)
+    @PluginMethod(returnType = PluginMethod.RETURN_PROMISE)
     public void clearWatch(final PluginCall call) {
+
+        if (!isStarted) {
+            call.reject("Volume buttons has not been been watched");
+            return;
+        }
 
         getBridge()
                 .getWebView()
@@ -71,7 +92,10 @@ public class VolumeButtonsPlugin extends Plugin {
         getBridge().releaseCall(savedCall);
         savedCall = null;
 
+        isStarted = false;
+
         call.resolve();
+
     }
 }
 

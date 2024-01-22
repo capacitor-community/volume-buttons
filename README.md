@@ -62,6 +62,7 @@ npx cap sync
 
 <docgen-index>
 
+* [`isWatching()`](#iswatching)
 * [`watchVolume(...)`](#watchvolume)
 * [`clearWatch()`](#clearwatch)
 * [Interfaces](#interfaces)
@@ -71,6 +72,21 @@ npx cap sync
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+
+### isWatching()
+
+```typescript
+isWatching() => Promise<GetIsWatchingResult>
+```
+
+Get the watch status of the volume buttons.
+
+**Returns:** <code>Promise&lt;<a href="#getiswatchingresult">GetIsWatchingResult</a>&gt;</code>
+
+**Since:** 1.0.1
+
+--------------------
+
 
 ### watchVolume(...)
 
@@ -106,6 +122,13 @@ Clear the existing watch
 
 
 ### Interfaces
+
+
+#### GetIsWatchingResult
+
+| Prop        | Type                 | Description                              | Since |
+| ----------- | -------------------- | ---------------------------------------- | ----- |
+| **`value`** | <code>boolean</code> | If the volume buttons are being watched. | 1.0.1 |
 
 
 #### VolumeButtonsOptions

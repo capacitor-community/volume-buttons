@@ -18,6 +18,18 @@ public class VolumeButtonsPlugin: CAPPlugin {
         volumeHandler = VolumeButtonsHandler()
     }
     
+    @objc func isWatching(_ call: CAPPluginCall) {
+        
+        guard volumeHandler != nil else {
+            call.reject("Volume handler has not been initialized yet")
+            return
+        }
+        
+        call.resolve([
+            "value": volumeHandler.isStarted
+        ])
+    }
+
     @objc func watchVolume(_ call: CAPPluginCall) {
         
         guard !volumeHandler.isStarted else {
@@ -50,9 +62,11 @@ public class VolumeButtonsPlugin: CAPPlugin {
             return
         }
         
-        if let id = savedCallID, let savedCall = bridge?.savedCall(withID: id) {
+        if let id = savedCallID {
             volumeHandler.stopHandler()
-            bridge?.releaseCall(savedCall)
+            if let savedCall = bridge?.savedCall(withID: id) {
+                bridge?.releaseCall(savedCall)
+            }
             savedCallID = nil
             call.resolve()
         }

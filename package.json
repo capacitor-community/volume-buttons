@@ -1,6 +1,6 @@
 {
   "name": "@capacitor-community/volume-buttons",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Capacitor Volume Buttons. The plugin enables to listen to hardware volume button presses",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",

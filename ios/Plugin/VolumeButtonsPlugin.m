@@ -8,6 +8,7 @@
 #import <Capacitor/Capacitor.h>
 
 CAP_PLUGIN(VolumeButtonsPlugin, "VolumeButtons",
+    CAP_PLUGIN_METHOD(isWatching, CAPPluginReturnPromise);
     CAP_PLUGIN_METHOD(watchVolume, CAPPluginReturnCallback);
     CAP_PLUGIN_METHOD(clearWatch, CAPPluginReturnPromise);
 )

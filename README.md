@@ -62,11 +62,11 @@ npx cap sync
 
 <docgen-index>
 
-- [`isWatching()`](#iswatching)
-- [`watchVolume(...)`](#watchvolume)
-- [`clearWatch()`](#clearwatch)
-- [Interfaces](#interfaces)
-- [Type Aliases](#type-aliases)
+* [`isWatching()`](#iswatching)
+* [`watchVolume(...)`](#watchvolume)
+* [`clearWatch()`](#clearwatch)
+* [Interfaces](#interfaces)
+* [Type Aliases](#type-aliases)
 
 </docgen-index>
 
@@ -85,7 +85,8 @@ Get the watch status of the volume buttons.
 
 **Since:** 1.0.1
 
----
+--------------------
+
 
 ### watchVolume(...)
 
@@ -104,7 +105,8 @@ Set up a watch for he hardware volume buttons changes
 
 **Since:** 1.0.0
 
----
+--------------------
+
 
 ### clearWatch()
 
@@ -116,9 +118,11 @@ Clear the existing watch
 
 **Since:** 1.0.0
 
----
+--------------------
+
 
 ### Interfaces
+
 
 #### GetIsWatchingResult
 
@@ -126,12 +130,14 @@ Clear the existing watch
 | ----------- | -------------------- | ---------------------------------------- | ----- |
 | **`value`** | <code>boolean</code> | If the volume buttons are being watched. | 1.0.1 |
 
+
 #### VolumeButtonsOptions
 
 | Prop                             | Type                 | Description                                                                                                                                                                                                                                                                                                                                                                                                   | Since |
 | -------------------------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
 | **`disableSystemVolumeHandler`** | <code>boolean</code> | This parameter can be used to disable the system volume handler (iOS only). If this is true, when up or down volume button is tapped, the system volume will always be reset to either the initial volume (the volume which was current when the volume buttons are started to be tracked/listened) or to 0.05 if the initial volume is less then 0.05 or to 0.95 if the initial volume is greater then 0.95. | 1.0.0 |
-| **`suppressVolumeIndicator`**    | <code>boolean</code> | This parameter can be used to suppress/hide the system volume indicator (Android only). If this is true, when up or down volume button is tapped, the system volume indicator will not be shown. The default value is false.                                                                                                                                                                                  | 1.0.2 |
+| **`suppressVolumeIndicator`**    | <code>boolean</code> | This parameter can be used to suppress/hide the system volume indicator (Android only, it is never shown on iOS already). If this is true, when up or down volume button is tapped, the system volume indicator will not be shown. The default value is false.                                                                                                                                                | 1.0.2 |
+
 
 #### VolumeButtonsResult
 
@@ -139,11 +145,14 @@ Clear the existing watch
 | --------------- | --------------------------- | ---------------------------------------------------------------------- | ----- |
 | **`direction`** | <code>'up' \| 'down'</code> | This indicates either the volume up or volume down button was pressed. | 1.0.0 |
 
+
 ### Type Aliases
+
 
 #### VolumeButtonsCallback
 
 <code>(result: <a href="#volumebuttonsresult">VolumeButtonsResult</a>, err?: any): void</code>
+
 
 #### CallbackID
 

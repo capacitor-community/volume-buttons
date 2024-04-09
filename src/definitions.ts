@@ -11,6 +11,14 @@ export interface VolumeButtonsOptions {
    * @since 1.0.0
    */
   disableSystemVolumeHandler?: boolean;
+  /**
+   * This parameter can be used to suppress/hide the system volume indicator (Android only, it is never shown on iOS already).
+   * If this is true, when up or down volume button is tapped, the system volume indicator will not be shown.
+   * The default value is false.
+   *
+   * @since 1.0.2
+   */
+  suppressVolumeIndicator?: boolean;
 }
 
 export type VolumeButtonsCallback = (

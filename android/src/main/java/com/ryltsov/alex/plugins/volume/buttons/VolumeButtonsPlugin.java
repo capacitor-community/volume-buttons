@@ -29,6 +29,8 @@ public class VolumeButtonsPlugin extends Plugin {
     private PluginCall savedCall;
     private boolean isStarted = false;
 
+    private boolean suppressVolumeIndicator = false;
+
     @PluginMethod(returnType = PluginMethod.RETURN_PROMISE)
     public void isWatching(final PluginCall call) {
 
@@ -44,6 +46,8 @@ public class VolumeButtonsPlugin extends Plugin {
             call.reject("Volume buttons has already been watched");
             return;
         }
+
+        suppressVolumeIndicator = Boolean.TRUE.equals(call.getBoolean("suppressVolumeIndicator", true));
 
         call.setKeepAlive(true);
         savedCall = call;
@@ -69,10 +73,16 @@ public class VolumeButtonsPlugin extends Plugin {
                                     }
                                 }
 
-                                return false;
+                                // NOTE: we return suppressVolumeIndicator value for any event actions but KeyEvent.ACTION_UP (which is handled above)
+                                // therefore, when suppressVolumeIndicator is true, for a key event that typically controls the system volume,
+                                // the system volume indicator will not be displayed by default.
+                                // This is because returning true from onKey() indicates that your application has consumed
+                                // the key event and no system-level action should occur in response to that event.
+                                return suppressVolumeIndicator;
                             }
                         }
                 );
+
 
         isStarted = true;
     }

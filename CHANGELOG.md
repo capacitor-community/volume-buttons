@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v6.0.0](https://github.com/capacitor-community/file-opener/compare/v1.0.2...v6.0.0) (2024-04-23)
+
+### Chores
+
+- enable capacitor v6.0.0 support ([#10](https://github.com/capacitor-community/volume-buttons/pull/10)), ([3ef0710](https://github.com/capacitor-community/volume-buttons/commit/3ef0710825a74ec81ed6692d7a27c6927d8f2deb)), closes [#8](https://github.com/capacitor-community/volume-buttons/issues/8)
+
 ## [v1.0.2](https://github.com/capacitor-community/file-opener/compare/v1.0.1...v1.0.2) (2024-04-09)
 
 ### Features

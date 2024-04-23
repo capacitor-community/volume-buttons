@@ -7,20 +7,20 @@
 
 <p align="center">
   <img src="https://img.shields.io/maintenance/yes/2024?style=flat-square" />
-  <a href="https://github.com/capacitor-community/volume-buttons/actions?query=workflow%3A%22CI%22"><img src="https://img.shields.io/github/workflow/status/capacitor-community/volume-buttons/CI?style=flat-square" /></a>
   <a href="https://www.npmjs.com/package/@capacitor-community/volume-buttons"><img src="https://img.shields.io/npm/l/@capacitor-community/volume-buttons?style=flat-square" /></a>
-<br>
+  <br>
   <a href="https://www.npmjs.com/package/@capacitor-community/volume-buttons"><img src="https://img.shields.io/npm/dw/@capacitor-community/volume-buttons?style=flat-square" /></a>
   <a href="https://www.npmjs.com/package/@capacitor-community/volume-buttons"><img src="https://img.shields.io/npm/v/@capacitor-community/volume-buttons?style=flat-square" /></a>
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-<a href="#contributors-"><img src="https://img.shields.io/badge/all%20contributors-1-orange?style=flat-square" /></a>
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+  <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+  <a href="#contributors-"><img src="https://img.shields.io/badge/all%20contributors-1-orange?style=flat-square" /></a>
+  <!-- ALL-CONTRIBUTORS-BADGE:END -->
 </p>
 
 ## Table of Contents
 
 - [Maintainers](#maintainers)
 - [About](#about)
+- [Plugin versions](#plugin-versions)
 - [Supported Platforms](#supported-platforms)
 - [Installation](#installation)
 - [API](#api)
@@ -45,6 +45,13 @@ This plugin contains code derived from or inspired by https://github.com/CipherB
 - supports Android and iOS platforms
 
 **NOTE**: The plugin version 1.0.0 is compatible with Capacitor 5 which requires gradle version 8.0
+
+## Plugin versions
+
+| Capacitor version | Plugin version |
+| ----------------- | -------------- |
+| 6.x               | 6.x            |
+| 5.x               | 1.x            |
 
 ## Supported Platforms
 

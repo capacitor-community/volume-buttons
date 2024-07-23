@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v6.0.1](https://github.com/capacitor-community/file-opener/compare/v6.0.0...v6.0.1) (2024-07-23)
+
+### Bugfix
+
+- [Android] suppressVolumeIndicator consumes all key press events, not just volume keys ([#13](https://github.com/capacitor-community/volume-buttons/pull/13)), ([3bb1baf](https://github.com/capacitor-community/volume-buttons/commit/3bb1baf922a25bc5a72882c9eafa4eb717718a2e)), closes [#12](https://github.com/capacitor-community/volume-buttons/issues/12)
+
 ## [v6.0.0](https://github.com/capacitor-community/file-opener/compare/v1.0.2...v6.0.0) (2024-04-23)
 
 ### Chores

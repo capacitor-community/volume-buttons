@@ -58,31 +58,25 @@ public class VolumeButtonsPlugin extends Plugin {
                         new View.OnKeyListener() {
                             @Override
                             public boolean onKey(View v, int keyCode, android.view.KeyEvent event) {
-                                boolean isKeyUp = event.getAction() == KeyEvent.ACTION_UP;
-                                JSObject ret = new JSObject();
-
-                                if (isKeyUp) {
-                                    if (keyCode == KeyEvent.KEYCODE_VOLUME_UP) {
-                                        ret.put("direction", "up");
+                                if (keyCode == KeyEvent.KEYCODE_VOLUME_UP || keyCode == KeyEvent.KEYCODE_VOLUME_DOWN) {
+                                    boolean isKeyUp = event.getAction() == KeyEvent.ACTION_UP;
+                                    if (isKeyUp) {
+                                        JSObject ret = new JSObject();
+                                        ret.put("direction", keyCode == KeyEvent.KEYCODE_VOLUME_UP ? "up" : "down");
                                         call.resolve(ret);
-                                        return true;
-                                    } else if (keyCode == KeyEvent.KEYCODE_VOLUME_DOWN) {
-                                        ret.put("direction", "down");
-                                        call.resolve(ret);
-                                        return true;
                                     }
+                                    // NOTE: we return suppressVolumeIndicator value for volume buttons event actions only
+                                    // therefore, when suppressVolumeIndicator is true, for a key event that typically controls the system volume,
+                                    // the system volume indicator will not be displayed by default.
+                                    // This is because returning true from onKey() indicates that your application has consumed
+                                    // the key event and no system-level action should occur in response to that event.
+                                    return suppressVolumeIndicator;
                                 }
 
-                                // NOTE: we return suppressVolumeIndicator value for any event actions but KeyEvent.ACTION_UP (which is handled above)
-                                // therefore, when suppressVolumeIndicator is true, for a key event that typically controls the system volume,
-                                // the system volume indicator will not be displayed by default.
-                                // This is because returning true from onKey() indicates that your application has consumed
-                                // the key event and no system-level action should occur in response to that event.
-                                return suppressVolumeIndicator;
+                                return false;
                             }
                         }
                 );
-
 
         isStarted = true;
     }

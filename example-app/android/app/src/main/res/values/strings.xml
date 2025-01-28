@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Volume Buttons Demo</string>
+    <string name="title_activity_main">Volume Buttons Demo</string>
+    <string name="package_name">ryltsov.alex.volume.buttons.demo</string>
+    <string name="custom_url_scheme">ryltsov.alex.volume.buttons.demo</string>
+</resources>

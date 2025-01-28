@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Volume Buttons Demo App
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Volume Buttons Demo App</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-button expand="block" color="primary" (click)="watchVolumeButtonsPressed()">Watch Volume Buttons</ion-button>
+      <ion-button expand="block" color="secondary" (click)="unwatchVolumeButtonsPressed()">UnWatch Volume
+        Buttons</ion-button>
+      <ion-button expand="block" color="tertiary" (click)="isVolumeButtonsWatched()">Is Volume Buttons
+        Watched?</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

@@ -45,12 +45,13 @@ This plugin contains code derived from or inspired by https://github.com/CipherB
 - keep receiving events after the application sent to and returns from the background
 - supports Android and iOS platforms
 
-**NOTE**: The plugin version 1.0.0 is compatible with Capacitor 5 which requires gradle version 8.0
+**NOTE**: The plugin version 7.0.0 is compatible with Capacitor 7
 
 ## Plugin versions
 
 | Capacitor version | Plugin version |
 | ----------------- | -------------- |
+| 7.x               | 7.x            |
 | 6.x               | 6.x            |
 | 5.x               | 1.x            |
 

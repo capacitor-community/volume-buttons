@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v7.0.0](https://github.com/capacitor-community/volume-buttons/compare/v6.0.0...v7.0.0) (2025-01-28)
+
+### Chores
+
+- support capacitor v7.0.0 ([#15](https://github.com/capacitor-community/volume-buttons/pull/15)), ([8e88c23](https://github.com/capacitor-community/volume-buttons/commit/8e88c23f109c507e1c13b4de6198c3c37108f368))
+- added **Volume Buttons Demo** example application to demo the volume buttons plugin usage
+
 ## [v6.0.1](https://github.com/capacitor-community/file-opener/compare/v6.0.0...v6.0.1) (2024-07-23)
 
 ### Bugfix

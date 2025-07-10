@@ -9,7 +9,14 @@ import Capacitor
 import MediaPlayer
 
 @objc(VolumeButtonsPlugin)
-public class VolumeButtonsPlugin: CAPPlugin {
+public class VolumeButtonsPlugin: CAPPlugin, CAPBridgedPlugin {
+    public let identifier = "VolumeButtonsPlugin" 
+    public let jsName = "VolumeButtons" 
+    public let pluginMethods: [CAPPluginMethod] = [
+        CAPPluginMethod(name: "isWatching", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "watchVolume", returnType: CAPPluginReturnCallback),
+        CAPPluginMethod(name: "clearWatch", returnType: CAPPluginReturnPromise),
+    ] 
     
     private var savedCallID: String? = nil
     private var volumeHandler: VolumeButtonsHandler!

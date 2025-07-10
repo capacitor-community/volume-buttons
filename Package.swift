@@ -6,7 +6,7 @@ let package = Package(
     platforms: [.iOS(.v14)],
     products: [
         .library(
-            name: "VolumeButtonsPlugin",
+            name: "CapacitorCommunityVolumeButtons",
             targets: ["VolumeButtonsPlugin"])
     ],
     dependencies: [

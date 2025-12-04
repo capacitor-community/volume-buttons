@@ -1,11 +1,14 @@
 import { WebPlugin } from '@capacitor/core';
 
-import type { CallbackID, GetIsWatchingResult, VolumeButtonsOptions, VolumeButtonsPlugin, VolumeButtonsCallback } from './definitions';
+import type {
+  CallbackID,
+  GetIsWatchingResult,
+  VolumeButtonsOptions,
+  VolumeButtonsPlugin,
+  VolumeButtonsCallback,
+} from './definitions';
 
-export class VolumeButtonsWeb
-  extends WebPlugin
-  implements VolumeButtonsPlugin {
-
+export class VolumeButtonsWeb extends WebPlugin implements VolumeButtonsPlugin {
   public async isWatching(): Promise<GetIsWatchingResult> {
     throw new Error('VolumeButtons is not supported on web');
   }
@@ -18,5 +21,4 @@ export class VolumeButtonsWeb
   public async clearWatch(): Promise<void> {
     throw new Error('VolumeButtons is not supported on web');
   }
-
 }

@@ -21,10 +21,7 @@ export interface VolumeButtonsOptions {
   suppressVolumeIndicator?: boolean;
 }
 
-export type VolumeButtonsCallback = (
-  result: VolumeButtonsResult,
-  err?: any,
-) => void;
+export type VolumeButtonsCallback = (result: VolumeButtonsResult, err?: any) => void;
 
 export interface VolumeButtonsResult {
   /**
@@ -45,7 +42,6 @@ export interface GetIsWatchingResult {
 }
 
 export interface VolumeButtonsPlugin {
-
   /**
    * Get the watch status of the volume buttons.
    *
@@ -66,5 +62,4 @@ export interface VolumeButtonsPlugin {
    * @since 1.0.0
    */
   clearWatch(): Promise<void>;
-
 }

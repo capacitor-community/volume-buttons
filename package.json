@@ -1,6 +1,6 @@
 {
   "name": "@capacitor-community/volume-buttons",
-  "version": "8.0.0-beta.0",
+  "version": "8.0.0",
   "description": "Capacitor Volume Buttons. The plugin enables to listen to hardware volume button presses",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -55,10 +55,10 @@
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@capacitor/android": "^8.0.0-beta.0",
-    "@capacitor/core": "^8.0.0-beta.0",
+    "@capacitor/android": "^8.0.0",
+    "@capacitor/core": "^8.0.0",
     "@capacitor/docgen": "^0.3.1",
-    "@capacitor/ios": "^8.0.0-beta.0",
+    "@capacitor/ios": "^8.0.0",
     "@ionic/eslint-config": "^0.4.0",
     "@ionic/prettier-config": "^4.0.0",
     "@ionic/swiftlint-config": "^2.0.0",
@@ -71,7 +71,7 @@
     "typescript": "^5.9.3"
   },
   "peerDependencies": {
-    "@capacitor/core": ">=8.0.0-beta.0"
+    "@capacitor/core": ">=8.0.0"
   },
   "prettier": "@ionic/prettier-config",
   "swiftlint": "@ionic/swiftlint-config",

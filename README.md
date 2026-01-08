@@ -51,6 +51,7 @@ This plugin contains code derived from or inspired by https://github.com/CipherB
 
 | Capacitor version | Plugin version |
 | ----------------- | -------------- |
+| 8.x               | 8.x            |
 | 7.x               | 7.x            |
 | 6.x               | 6.x            |
 | 5.x               | 1.x            |

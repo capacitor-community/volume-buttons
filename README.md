@@ -45,7 +45,7 @@ This plugin contains code derived from or inspired by https://github.com/CipherB
 - keep receiving events after the application sent to and returns from the background
 - supports Android and iOS platforms
 
-**NOTE**: The plugin version 7.0.0 is compatible with Capacitor 7
+**NOTE**: The plugin version 8.0.0 is compatible with Capacitor 8
 
 ## Plugin versions
 

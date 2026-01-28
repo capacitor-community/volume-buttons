@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v8.0.0](https://github.com/capacitor-community/volume-buttons/compare/v7.0.0...v8.0.0) (2026-01-28)
+
+### Chores
+
+- support capacitor v8.0.0 ([#22](https://github.com/capacitor-community/volume-buttons/pull/22)), ([95125fb](https://github.com/capacitor-community/volume-buttons/commit/95125fbd15f879cfa2e187b7828c119a729918c9))
+- chore: Update plugin and example app dependencies
+
 ## [v7.0.0](https://github.com/capacitor-community/volume-buttons/compare/v6.0.0...v7.0.0) (2025-01-28)
 
 ### Chores

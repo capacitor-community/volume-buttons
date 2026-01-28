@@ -7,7 +7,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.7.3'
+        classpath 'com.android.tools.build:gradle:8.13.0'
         classpath 'com.google.gms:google-services:4.4.0'
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -21,6 +21,14 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+    }
+    configurations.all {
+        resolutionStrategy {
+            // Force unified Kotlin stdlib version to resolve duplicate class conflicts
+            force 'org.jetbrains.kotlin:kotlin-stdlib:1.9.25'
+            force 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.25'
+            force 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.25'
+        }
     }
 }
 

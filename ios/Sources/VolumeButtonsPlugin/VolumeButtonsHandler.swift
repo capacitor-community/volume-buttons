@@ -63,20 +63,25 @@ public class VolumeButtonsHandler: NSObject {
         sessionCategory = AVAudioSession.Category.playback.rawValue
         sessionOptions = AVAudioSession.CategoryOptions.mixWithOthers
 
-        volumeView = MPVolumeView(
-            frame: CGRect(
-                x: CGFloat.infinity,
-                y: CGFloat.infinity,
-                width: 0,
-                height: 0
+        super.init()
+
+        DispatchQueue.main.async { [weak self] in
+            let view = MPVolumeView(
+                frame: CGRect(
+                    x: CGFloat.infinity,
+                    y: CGFloat.infinity,
+                    width: 0,
+                    height: 0
+                )
             )
-        )
+            self?.volumeView = view
 
-        if let window = UIApplication.shared.windows.first, let view = volumeView {
-            window.insertSubview(view, at: 0)
+            if let window = UIApplication.shared.windows.first {
+                window.insertSubview(view, at: 0)
+            }
+
+            view.isHidden = true
         }
-
-        volumeView?.isHidden = true
         exactJumpsOnly = false
     }
 
@@ -92,14 +97,18 @@ public class VolumeButtonsHandler: NSObject {
 
     public func startHandler(_ disableSystemVolumeHandler: Bool) {
         self.setupSession()
-        volumeView?.isHidden = false
+        DispatchQueue.main.async { [weak self] in
+            self?.volumeView?.isHidden = false
+        }
         self.disableSystemVolumeHandler = disableSystemVolumeHandler
     }
 
     public func stopHandler() {
         guard isStarted else { return }
         isStarted = false
-        volumeView?.isHidden = false
+        DispatchQueue.main.async { [weak self] in
+            self?.volumeView?.isHidden = false
+        }
         self.observation = nil
         NotificationCenter.default.removeObserver(self)
     }
@@ -169,7 +178,9 @@ public class VolumeButtonsHandler: NSObject {
         NotificationCenter.default.addObserver(self, selector: #selector(applicationDidChangeActive(notification:)), name: UIApplication.willResignActiveNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(applicationDidChangeActive(notification:)), name: UIApplication.didBecomeActiveNotification, object: nil)
 
-        volumeView?.isHidden = !disableSystemVolumeHandler
+        DispatchQueue.main.async { [weak self] in
+            self?.volumeView?.isHidden = !(self?.disableSystemVolumeHandler ?? false)
+        }
     }
 
     func useExactJumpsOnly(enabled: Bool) {

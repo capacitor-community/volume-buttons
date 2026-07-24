@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v8.0.1](https://github.com/capacitor-community/volume-buttons/compare/v8.0.0...v8.0.1) (2026-07-24)
+
+### Bugfix
+
+- [iOS] prevent crashes by ensuring UIKit operations triggered by volume-button events run on the main thread ([#30](https://github.com/capacitor-community/volume-buttons/pull/30))
+
 ## [v8.0.0](https://github.com/capacitor-community/volume-buttons/compare/v7.0.0...v8.0.0) (2026-01-28)
 
 ### Chores
